@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Fleet - Rent-A-Car</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-car"></i> Rent-A-Car
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cars.html" class="active">Fleet</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Fleet</h1>
+            <p>Choose from our wide selection of quality vehicles</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-group">
+                <label for="filter-type">Filter by Type:</label>
+                <select id="filter-type">
+                    <option value="">All Types</option>
+                    <option value="SUV">SUV</option>
+                    <option value="Sedan">Sedan</option>
+                    <option value="Hatchback">Hatchback</option>
+                    <option value="Minivan">Minivan</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cars Listing -->
+    <section class="cars-section">
+        <div class="container">
+            <div id="cars-grid" class="cars-grid">
+                <!-- Cars will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Car Details Modal -->
+    <div id="car-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modal-car-image" src="" alt="Car">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-car-name"></h2>
+                    <p id="modal-car-description"></p>
+                    <div class="modal-specs">
+                        <div class="spec">
+                            <span class="spec-label">Type:</span>
+                            <span id="modal-car-type"></span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-label">Transmission:</span>
+                            <span id="modal-car-transmission"></span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-label">Fuel:</span>
+                            <span id="modal-car-fuel"></span>
+                        </div>
+                        <div class="spec">
+                            <span class="spec-label">Price:</span>
+                            <span id="modal-car-price"></span>
+                        </div>
+                    </div>
+                    <a id="modal-rent-btn" href="booking.html" class="btn btn-primary">Proceed to Booking</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <p>Rent-A-Car is your trusted partner for affordable and reliable car rentals. We provide quality vehicles for every occasion.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="cars.html">Fleet</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> +260 211 123 456</p>
+                    <p><i class="fas fa-envelope"></i> info@rentacar.co.zm</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Rent-A-Car. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
