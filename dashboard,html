@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+</head>
+<body>
+
+<h2>Bookings</h2>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Car</th>
+      <th>Dates</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody id="bookings"></tbody>
+</table>
+
+<script src="dashboard.js"></script>
+</body>
+</html>
