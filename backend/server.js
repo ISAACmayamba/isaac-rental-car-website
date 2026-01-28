@@ -4,11 +4,11 @@ const express = require("express");
 const cors = require("cors");
 
 // ROUTES
-const bookingRoutes = require("./routes/booking.routes");
-const contactRoutes = require("./routes/contact.routes");
-const vehicleRoutes = require("./routes/vehicle.routes");
-const adminRoutes = require("./routes/admin.routes");
-const dashboardRoutes = require("./routes/dashboard.routes");
+//const bookingRoutes = require("./routes/booking.routes");
+//const contactRoutes = require("./routes/contact.routes");
+//const vehicleRoutes = require("./routes/vehicle.routes");
+//const adminRoutes = require("./routes/admin.routes");
+//const dashboardRoutes = require("./routes/dashboard.routes");
 
 const app = express();
 
