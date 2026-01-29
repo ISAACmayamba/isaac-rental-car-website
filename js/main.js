@@ -196,7 +196,7 @@ if (filterTypeSelect) {
 
 // Contact form submission
 if (contactForm) {
-    contactForm.addEventListener('submit', (event) => {
+    contactForm.addEventListener('submit', async (event) => {
         event.preventDefault();
 
         // Get form data
@@ -237,19 +237,50 @@ if (contactForm) {
         }
 
         if (isValid) {
-            // Show success message
-            const formMessage = document.getElementById('form-message');
-            formMessage.className = 'form-message success';
-            formMessage.textContent = 'Thank you for your message! We will get back to you soon.';
+            try {
+                // Send to backend API
+                const response = await fetch('http://localhost:3000/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name,
+                        email,
+                        phone,
+                        subject,
+                        message
+                    })
+                });
 
-            // Reset form
-            contactForm.reset();
+                const data = await response.json();
 
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                formMessage.className = 'form-message';
-                formMessage.textContent = '';
-            }, 5000);
+                const formMessage = document.getElementById('form-message');
+
+                if (data.success) {
+                    // Show success message
+                    formMessage.className = 'form-message success';
+                    formMessage.textContent = data.message || 'Thank you for your message! We will get back to you soon.';
+
+                    // Reset form
+                    contactForm.reset();
+
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        formMessage.className = 'form-message';
+                        formMessage.textContent = '';
+                    }, 5000);
+                } else {
+                    // Show error message
+                    formMessage.className = 'form-message error';
+                    formMessage.textContent = data.message || 'Failed to send message. Please try again.';
+                }
+            } catch (error) {
+                console.error('Contact form error:', error);
+                const formMessage = document.getElementById('form-message');
+                formMessage.className = 'form-message error';
+                formMessage.textContent = 'Failed to send message. Please try again later.';
+            }
         }
     });
 }
